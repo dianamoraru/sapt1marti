@@ -3,6 +3,40 @@
 	<head>
 		<title>Tabel Studenti</title>
 		<link rel="stylesheet" href="stilstud.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+
+		$(function() {
+			$('#formular').submit(function(eveniment){
+				eveniment.preventDefault();
+				var nume=$('#nume').val();
+				var prenume=$('#prenume').val();
+				var specializare=$('#specializare').val();
+				$('.main-table tr:last').after('<tr><td>'+nume+'</td><td>'+prenume+'</td><td>'+specializare+'</td></tr>');
+				$('.main-table tbody tr td').click(function() {
+				
+					$(this).css('visibility', 'hidden');
+
+				});
+			})
+
+			$('.main-table tbody tr td').click(function() {
+				
+				$(this).css('visibility', 'hidden');
+
+			});
+			$('h1').click(function(){
+				$(this).css("background-color","green")
+			});
+
+
+		});
+
+
+	   
+
+		</script>
+
 	</head>
 	<body>
 	
@@ -35,7 +69,13 @@
 			</tbody>
 		</table>
 	
-		<hr>
+		<form id="formular">
+			<input id="nume" type="text" /><br>
+			<input id="prenume" type="text" /><br>
+			<input id="specializare" type="text" /><br>
+			<input id="incarca-date" type="submit"/>
+
+		</form>
 
 		
 	</body>
