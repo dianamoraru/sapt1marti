@@ -1,7 +1,7 @@
 .main-table {
 	border: 2.5px solid #333333;
 	margin-left: 500px;
-	border-color: rgb(150,150,150)
+	border-color: rgb(150,150,150);
 
 }
 
@@ -20,7 +20,7 @@
 
 }
 .main-table tbody td {
-	border-style: dashed
+	border-style: dashed;
 }
 
 .main-table tbody tr td {

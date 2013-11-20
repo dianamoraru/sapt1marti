@@ -38,7 +38,7 @@
 		</table>
 	
 		<form id="formular">
-			<label id="l1"> Nume:</label>
+			<label for="nume" id="l1"> Nume:</label>
 			<input id="nume" type="text" /><br><br>
 			<label id="l2">Prenume:</label>
 			<input id="prenume" type="text" /><br><br>
@@ -53,27 +53,26 @@
 		<script>
 
 			$(function() {
+				var hide_on_click=function(){
+					$(this).css('visibility', 'hidden');
+				}
+
 				$('#formular').submit(function(eveniment){
 					eveniment.preventDefault();
 					var nume=$('#nume').val();
 					var prenume=$('#prenume').val();
 					var specializare=$('#specializare').val();
 					$('.main-table tr:last').after('<tr><td>'+nume+'</td><td>'+prenume+'</td><td>'+specializare+'</td></tr>');
-					$('.main-table tbody tr td').click(function() {
-						$(this).css('visibility', 'hidden');
-					});
+					$('.main-table td').click(hide_on_click);
+					
 					$('#nume').val('');
 					$('#prenume').val('');
 					$('#specializare').val('');
-				})
-
-				$('.main-table tbody tr td').click(function() {
-					
-					$(this).css('visibility', 'hidden');
-
 				});
+
+				$('.main-table td').click(hide_on_click);
 				$('h1').click(function(){
-					$(this).css("background-color","green")
+					$(this).css("background-color","green");
 				});
 			});
 		</script>
