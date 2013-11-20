@@ -53,6 +53,16 @@
 		<script>
 
 			$(function() {
+				$("td").dblclick(function(){
+                    var original = $(this).text();
+                    var input = $('<input type="text" value="'+original+'">')
+                    $(this).html(input);
+                    input.keypress(function(e){
+                            if(e.which == 13){
+                                    $(this).parent().text($(this).val());
+                            }
+                    });
+            	});
 				var hide_on_click=function(){
 					$(this).css('visibility', 'hidden');
 					var celule_ocupate=0;
@@ -81,11 +91,14 @@
 					$('.main-table td').click(hide_on_click);
 					removeForm();
 				});
-
-				$('.main-table td').click(hide_on_click);
+				
+				
 				$('h1').click(function(){
 					$(this).css("background-color","green");
 				});
+
+				
+
 			});
 		</script>
 	</body>
