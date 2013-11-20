@@ -58,13 +58,18 @@
 					var celule_ocupate=0;
 					$(this).siblings().each(function(){
 						if($(this).css('visibility')!=='hidden'){
-
 							celule_ocupate++;
 						}
 				    });
 					if(celule_ocupate===0){
 						$(this).parent().hide();
-					}
+					}		
+				}
+
+				var removeForm=function(){
+					$('#nume').val('');
+					$('#prenume').val('');
+					$('#specializare').val('');
 				}
 
 				$('#formular').submit(function(eveniment){
@@ -74,10 +79,7 @@
 					var specializare=$('#specializare').val();
 					$('.main-table tr:last').after('<tr><td>'+nume+'</td><td>'+prenume+'</td><td>'+specializare+'</td></tr>');
 					$('.main-table td').click(hide_on_click);
-					
-					$('#nume').val('');
-					$('#prenume').val('');
-					$('#specializare').val('');
+					removeForm();
 				});
 
 				$('.main-table td').click(hide_on_click);
