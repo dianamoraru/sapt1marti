@@ -53,16 +53,19 @@
 		<script>
 
 			$(function() {
-				$("td").dblclick(function(){
-                    var original = $(this).text();
-                    var input = $('<input type="text" value="'+original+'">')
-                    $(this).html(input);
-                    input.keypress(function(e){
-                            if(e.which == 13){
-                                    $(this).parent().text($(this).val());
-                            }
-                    });
-            	});
+				var editCell=function(){
+					$("td").dblclick(function(){
+	                    var original = $(this).text();
+	                    var input = $('<input type="text" value="'+original+'">')
+	                    $(this).html(input);
+	                    input.keypress(function(e){
+	                            if(e.which == 13){
+	                                    $(this).parent().text($(this).val());
+	                            }
+	                    });
+	            	});
+				}
+				editCell();
 				var hide_on_click=function(){
 					$(this).css('visibility', 'hidden');
 					var celule_ocupate=0;
@@ -88,7 +91,8 @@
 					var prenume=$('#prenume').val();
 					var specializare=$('#specializare').val();
 					$('.main-table tr:last').after('<tr><td>'+nume+'</td><td>'+prenume+'</td><td>'+specializare+'</td></tr>');
-					$('.main-table td').click(hide_on_click);
+					<!--$('.main-table td').click(hide_on_click);-->
+					editCell();
 					removeForm();
 				});
 				
