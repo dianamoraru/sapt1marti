@@ -55,6 +55,16 @@
 			$(function() {
 				var hide_on_click=function(){
 					$(this).css('visibility', 'hidden');
+					var celule_ocupate=0;
+					$(this).siblings().each(function(){
+						if($(this).css('visibility')!=='hidden'){
+
+							celule_ocupate++;
+						}
+				    });
+					if(celule_ocupate===0){
+						$(this).parent().hide();
+					}
 				}
 
 				$('#formular').submit(function(eveniment){
