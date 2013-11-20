@@ -1,37 +1,37 @@
-			.main-table {
-				border: 2.5px solid #333333;
-				margin-left: 500px;
-				border-color: rgb(150,150,150)
+.main-table {
+	border: 2.5px solid #333333;
+	margin-left: 500px;
+	border-color: rgb(150,150,150)
 
-			}
+}
 
-			.main-table thead {
-				background-color: blue;
-				font-weight: bold;
-				font-size: 1.2em;
+.main-table thead {
+	background-color: blue;
+	font-weight: bold;
+	font-size: 1.2em;
 
 
-			}
+}
 
-			.main-table thead tr td {
-				padding: 5px;
-				border-style: solid;
-				cursor: pointer;
+.main-table thead tr td {
+	padding: 5px;
+	border-style: solid;
+	cursor: pointer;
 
-			}
-			.main-table tbody td{
-				border-style: dashed
-			}
+}
+.main-table tbody td {
+	border-style: dashed
+}
 
-			.main-table tbody tr td {
-				text-align: center;
-			}
-			#linie1 {
+.main-table tbody tr td {
+	text-align: center;
+}
+#linie1 {
 
-				background-color: orange;
-			}
+	background-color: orange;
+}
 
-			h1{
+h1 {
 
-				background-color: rgb(150,15,200);
-			}
+	background-color: rgb(150,15,200);
+}
